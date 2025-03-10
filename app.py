@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
+from sklearn.externals import joblib
 import matplotlib.pyplot as plt
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
@@ -9,7 +9,7 @@ from statsmodels.tsa.statespace.sarimax import SARIMAX
 # Load saved SARIMAX model
 @st.cache_resource
 def load_model():
-    return joblib.load("requirements.pkl")
+    return joblib.load("timeseris.pkl")
 
 
 model = load_model()
